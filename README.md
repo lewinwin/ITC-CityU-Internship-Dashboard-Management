@@ -64,37 +64,19 @@ You can also run the included script:
 npm run server
 ```
 
-## Git Workflow
-
-Recommended commit flow for this project:
-
-```bash
-git init
-git add .
-git commit -m "Initial project setup with Vite React"
-
-git add .
-git commit -m "Add JSON Server internship database"
-
-git add .
-git commit -m "Implement internship listing and API fetch"
-
-git add .
-git commit -m "Add search filter and sorting features"
-
-git add .
-git commit -m "Add saved internships and application tracker"
-
-git add .
-git commit -m "Add ITC allowance calculator"
-
-git add .
-git commit -m "Polish responsive UI and update README"
-```
-
 ## Screenshots
 
-Add screenshots here after running the app locally.
+### Home Page
+
+![Home page screenshot](screenshots/home.png)
+
+### Saved Internship Card
+
+![Saved internship card screenshot](screenshots/saved-internship.png)
+
+### ITC Allowance Calculator
+
+![ITC allowance calculator screenshot](screenshots/calculator.png)
 
 ## Future Improvements
 
