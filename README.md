@@ -83,6 +83,8 @@ The app uses hash routing on GitHub Pages, so internal pages use URLs like:
 https://lewinwin.github.io/ITC-CityU-Internship-Dashboard-Management/#/internships
 ```
 
+Direct URLs without the hash are redirected to the matching hash route by `public/404.html`.
+
 ## Screenshots
 
 ### Home Page
