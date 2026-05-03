@@ -77,6 +77,12 @@ If you rename the GitHub repository later, update these two values:
 - `homepage` in `package.json`
 - `base` in `vite.config.js`
 
+The app uses hash routing on GitHub Pages, so internal pages use URLs like:
+
+```text
+https://lewinwin.github.io/ITC-CityU-Internship-Dashboard-Management/#/internships
+```
+
 ## Screenshots
 
 ### Home Page
