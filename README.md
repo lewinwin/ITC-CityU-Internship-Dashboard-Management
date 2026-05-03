@@ -1,10 +1,10 @@
 # CityU ITC Internship Tracker
 
-A React + JavaScript front-end side project for a CityU Computer Science student applying for ITC/STEM internships. The app demonstrates practical React, JavaScript, HTML, CSS, Fetch API, JSON Server, localStorage, and Git workflow skills without TypeScript, Tailwind, authentication, a real backend, or a database service.
+A React + JavaScript front-end side project for a CityU Computer Science student applying for ITC/STEM internships. The app demonstrates practical React, JavaScript, HTML, CSS, bundled JSON data, localStorage, and Git workflow skills without TypeScript, Tailwind, authentication, a real backend, or a database service.
 
 ## Features
 
-- Fetches internship records from JSON Server at `http://localhost:3001/internships`
+- Loads internship records from bundled `database.json`
 - Displays internship cards with company, role, requirements, skills, deadline, vacancies, honorarium, and application details
 - Searches by company, job title, description, requirements, and skills
 - Filters by category
@@ -24,7 +24,7 @@ A React + JavaScript front-end side project for a CityU Computer Science student
 - CSS
 - React Router
 - Fetch API
-- JSON Server
+- Static JSON data
 - localStorage
 - Git
 
@@ -44,25 +44,38 @@ npm run dev
 
 Open the local Vite URL shown in the terminal, usually `http://localhost:5173`.
 
-## JSON Server
-
-Start JSON Server in a second terminal:
+Build the static site:
 
 ```bash
-npx json-server --watch database.json --port 3001
+npm run build
 ```
 
-The internships endpoint is:
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## GitHub Pages
+
+Install dependencies, then deploy:
+
+```bash
+npm run deploy
+```
+
+The deploy script builds the app and publishes the `dist` folder to the `gh-pages` branch.
+
+This repository is configured for:
 
 ```text
-http://localhost:3001/internships
+https://lewinwin.github.io/ITC-CityU-Internship-Dashboard-Management
 ```
 
-You can also run the included script:
+If you rename the GitHub repository later, update these two values:
 
-```bash
-npm run server
-```
+- `homepage` in `package.json`
+- `base` in `vite.config.js`
 
 ## Screenshots
 

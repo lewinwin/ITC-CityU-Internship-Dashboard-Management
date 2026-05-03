@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar.jsx'
 import SortDropdown from '../components/SortDropdown.jsx'
 import SummaryCard from '../components/SummaryCard.jsx'
 import { filterInternships } from '../utils/filtering.js'
+import { fetchInternships } from '../utils/internshipsApi.js'
 import { sortInternships } from '../utils/sorting.js'
 import {
   getSavedIds,
@@ -27,17 +28,10 @@ function Internships() {
   useEffect(() => {
     const loadInternships = async () => {
       try {
-        const response = await fetch('http://localhost:3001/internships')
-
-        if (!response.ok) {
-          throw new Error('Unable to load internships')
-        }
-
-        const data = await response.json()
-        setInternships(data)
+        setInternships(await fetchInternships())
       } catch {
         setError(
-          'Could not connect to JSON Server. Run npx json-server --watch database.json --port 3001 and refresh this page.',
+          'Could not load internship data. Please refresh this page.',
         )
       } finally {
         setLoading(false)

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import InternshipCard from '../components/InternshipCard.jsx'
 import SummaryCard from '../components/SummaryCard.jsx'
+import { fetchInternships } from '../utils/internshipsApi.js'
 import {
   getSavedIds,
   getStatus,
@@ -19,16 +20,10 @@ function Saved() {
   useEffect(() => {
     const loadInternships = async () => {
       try {
-        const response = await fetch('http://localhost:3001/internships')
-
-        if (!response.ok) {
-          throw new Error('Unable to load internships')
-        }
-
-        setInternships(await response.json())
+        setInternships(await fetchInternships())
       } catch {
         setError(
-          'Saved IDs are stored locally, but internship details need JSON Server on port 3001.',
+          'Saved IDs are stored locally, but internship details could not be loaded.',
         )
       } finally {
         setLoading(false)
